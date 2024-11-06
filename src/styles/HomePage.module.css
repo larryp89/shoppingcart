@@ -1,0 +1,12 @@
+.banner {
+  background-image: url(../assets/stoned-penguin.png);
+  background-size: cover;
+  background-position: center center;
+  height: 300px; /* Adjust height as needed */
+  width: 100%;
+  opacity: 0.5;
+
+  @media (min-width: 501px) {
+    background-size: contain;
+  }
+}

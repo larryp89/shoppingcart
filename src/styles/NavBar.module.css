@@ -1,0 +1,25 @@
+.nav {
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1rem;
+  margin: 1rem;
+}
+.container {
+  display: flex;
+  gap: 1rem;
+}
+.button {
+  background-color: black;
+  padding: 0.5rem 0.5rem;
+  color: white;
+  opacity: 0.8;
+  font-size: 0.75rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 1;
+}

@@ -1,12 +1,11 @@
-import "./App.css";
+import "./styles/App.css";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <>
-      <div>
-        <h1>HELLO SHOPPING</h1>
-      </div>
-    </>
+    <div className="container">
+      <HomePage />
+    </div>
   );
 }
 
