@@ -1,4 +1,5 @@
 import styles from "../styles/NavBar.module.css";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -6,15 +7,16 @@ function NavBar() {
       <nav className={styles.nav}>
         <h2 className={styles.logo}>Stoned Penguin</h2>
         <div className={styles.container}>
-          <a className={styles.button} href="home">
+          {/* Note must use /home for it to be an absolute path as just "home" would be a relative one */}
+          <Link className={styles.button} to="/">
             Home
-          </a>
-          <a className={styles.button} href="shop">
+          </Link>
+          <Link className={styles.button} to="/shop">
             Shop
-          </a>
-          <a className={styles.button} href="about">
+          </Link>
+          <Link className={styles.button} to="/about">
             About us
-          </a>
+          </Link>
         </div>
       </nav>
     </>

@@ -4,8 +4,11 @@ import styles from "../styles/HomePage.module.css";
 function HomePage() {
   return (
     <>
-      <NavBar />
-      <div className={styles.banner}></div>
+      <div className="container">
+        <NavBar />
+        <h2>HOME</h2>
+        <div className={styles.banner}></div>
+      </div>
     </>
   );
 }

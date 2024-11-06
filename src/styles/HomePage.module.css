@@ -5,6 +5,7 @@
   height: 300px; /* Adjust height as needed */
   width: 100%;
   opacity: 0.5;
+  margin: 1rem;
 
   @media (min-width: 501px) {
     background-size: contain;
