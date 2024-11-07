@@ -2,7 +2,7 @@ import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
 import BasketIcon from "./BasketIcon";
 
-function NavBar() {
+function NavBar({ totalItems }) {
   return (
     <>
       <nav className={styles.nav}>
@@ -18,7 +18,7 @@ function NavBar() {
           <Link className={styles.button} to="about">
             About us
           </Link>
-          <BasketIcon />
+          <BasketIcon totalItems={totalItems} />
         </div>
       </nav>
     </>

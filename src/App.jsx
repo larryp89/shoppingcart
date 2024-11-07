@@ -8,6 +8,7 @@ import { useState } from "react";
 function App() {
   const [shoppingData, setShoppingData] = useState([]); // Set to blank array as map will throw error if no array to iterate over
   const [basket, setBasket] = useState([]);
+  const [totalItems, setTotalItems] = useState(0);
 
   const addItem = (item) => {
     setBasket([...basket, item]);
@@ -21,9 +22,14 @@ function App() {
     loadShoppingData();
   }, []);
 
+  // Update Total items when the length of the basket array changes
+  useEffect(() => {
+    setTotalItems(basket.length);
+  }, [basket]);
+
   return (
     <>
-      <NavBar />
+      <NavBar totalItems={totalItems}/>
       {/* Need to use "context" to pass props */}
       <Outlet context={{ shoppingData, addItem }} />
     </>

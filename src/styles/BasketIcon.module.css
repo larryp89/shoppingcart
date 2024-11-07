@@ -6,3 +6,25 @@
 .icon:hover {
   cursor: pointer;
 }
+
+.number {
+  color: white;
+  background-color: #ff5733; /* Choose a background color for the circle */
+  border-radius: 50%; /* Make it circular */
+  border: 2px solid white;
+  display: inline-flex; /* Align items horizontally */
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  width: 30px; /* Set a fixed size (adjust as needed) */
+  height: 30px; /* Make it the same as width for perfect circle */
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.icon:active {
+  transform: scale(0.95); /* Makes the button shrink a bit */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+
+.cart {
+  display: flex;
+}

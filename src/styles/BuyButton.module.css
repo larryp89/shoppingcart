@@ -1,0 +1,17 @@
+.button {
+  padding: 0.5rem 0.5rem;
+  color: black;
+  opacity: 0.8;
+  font-size: 1rem;
+  border: 2px solid black;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+button:active {
+  transform: scale(0.95); /* Makes the button shrink a bit */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
