@@ -1,0 +1,8 @@
+.icon {
+  height: 50px;
+  fill: white;
+}
+
+.icon:hover {
+  cursor: pointer;
+}

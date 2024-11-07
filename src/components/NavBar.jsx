@@ -1,5 +1,6 @@
 import styles from "../styles/NavBar.module.css";
 import { Link } from "react-router-dom";
+import BasketIcon from "./BasketIcon";
 
 function NavBar() {
   return (
@@ -17,6 +18,7 @@ function NavBar() {
           <Link className={styles.button} to="about">
             About us
           </Link>
+          <BasketIcon />
         </div>
       </nav>
     </>
