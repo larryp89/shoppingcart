@@ -7,6 +7,12 @@ import { useState } from "react";
 
 function App() {
   const [shoppingData, setShoppingData] = useState([]); // Set to blank array as map will throw error if no array to iterate over
+  const [basket, setBasket] = useState([]);
+
+  const addItem = (item) => {
+    setBasket([...basket, item]);
+  };
+
   useEffect(() => {
     const loadShoppingData = async () => {
       const data = await getShoppingData();
@@ -19,7 +25,7 @@ function App() {
     <>
       <NavBar />
       {/* Need to use "context" to pass props */}
-      <Outlet context={shoppingData} />
+      <Outlet context={{ shoppingData, addItem }} />
     </>
   );
 }

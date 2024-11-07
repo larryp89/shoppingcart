@@ -1,5 +1,5 @@
-function BuyButton() {
-  return <button>BUY ME</button>;
+function BuyButton({ handleClick }) {
+  return <button onClick={handleClick}>Add to basket</button>;
 }
 
-export default BuyButton
+export default BuyButton;

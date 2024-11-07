@@ -1,12 +1,13 @@
 import styles from "../styles/ShoppingItem.module.css";
 import BuyButton from "./BuyButton";
-function ShoppingItem({ item }) {
+
+function ShoppingItem({ item, handleClick }) {
   return (
     <>
       <div className={styles.shoppingItem}>
         <h3>{item.title}</h3>
         <img className={styles.itemImage} src={item.image} alt={item.name} />
-        <BuyButton />
+        <BuyButton handleClick={() => handleClick(item)} />
       </div>
     </>
   );
