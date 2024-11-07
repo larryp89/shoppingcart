@@ -2,7 +2,11 @@ import styles from "../styles/BasketIcon.module.css";
 function BasketIcon() {
   return (
     <>
-      <button>
+      <button
+        onClick={() => {
+          console.log("basket");
+        }}
+      >
         <svg
           className={styles.icon}
           xmlns="http://www.w3.org/2000/svg"
