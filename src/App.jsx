@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 function App() {
-  const [shoppingData, setShoppingData] = useState(null);
+  const [shoppingData, setShoppingData] = useState([]); // Set to blank array as map will throw error if no array to iterate over
   useEffect(() => {
     const loadShoppingData = async () => {
       const data = await getShoppingData();

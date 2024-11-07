@@ -1,5 +1,5 @@
 const getShoppingData = async () => {
-  const response = await fetch("https://api.escuelajs.co/api/v1/products/?categoryId=1");
+  const response = await fetch("https://fakestoreapi.com/products");
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }

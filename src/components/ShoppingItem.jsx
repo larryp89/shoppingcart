@@ -1,21 +1,13 @@
-import { useOutletContext } from "react-router-dom";
-
-function ShoppingItem() {
-  const shoppingData = useOutletContext();
-
+import styles from "../styles/ShoppingItem.module.css";
+import BuyButton from "./BuyButton";
+function ShoppingItem({ item }) {
   return (
     <>
-      <h1>Shopping Item</h1>
-      {/* Wrap the returned elements in a parent element */}
-      {shoppingData.map((item) => {
-        return (
-          <div key={item.id}>
-            {/* Add a wrapper for multiple elements */}
-            <h2>Item {item.id}</h2>
-            <li>{item.name}</li>
-          </div>
-        );
-      })}
+      <div className={styles.shoppingItem}>
+        <h3>{item.title}</h3>
+        <img className={styles.itemImage} src={item.image} alt={item.name} />
+        <BuyButton />
+      </div>
     </>
   );
 }
