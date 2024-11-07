@@ -6,7 +6,7 @@ function ShoppingItem({ item, handleClick }) {
     <>
       <div className={styles.shoppingItem}>
         <h3>{item.title}</h3>
-        <img className={styles.itemImage} src={item.image} alt={item.name} />
+        <img className={styles.itemImage} src={item.image} alt={item.title} />
         <BuyButton handleClick={() => handleClick(item)} />
       </div>
     </>

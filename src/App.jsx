@@ -11,7 +11,28 @@ function App() {
   const [totalItems, setTotalItems] = useState(0);
 
   const addItem = (item) => {
-    setBasket([...basket, item]);
+    // Check if the item is already in the basket
+    const found = basket.find((basketItem) => basketItem.id === item.id);
+
+    // If the item is already in the basket
+    if (found) {
+      // Create a new object with the same properties as 'item',
+      // but increment its quantity by 1 based on the existing quantity
+      const updatedItemQuantity = { ...item, quantity: found.quantity + 1 };
+
+      // Create a new array by mapping through the existing basket
+      const newArray = basket.map((basketItem) =>
+        // If the basket item matches the current item, replace it with the updated one
+        basketItem.id === item.id ? updatedItemQuantity : basketItem
+      );
+
+      // Update the basket state with the new array
+      setBasket(newArray);
+    } else {
+      // If the item is not in the basket, set its quantity to 1
+      const updatedItem = { ...item, quantity: 1 };
+      setBasket([...basket, updatedItem]); // Add the new item to the basket
+    }
   };
 
   useEffect(() => {
@@ -29,9 +50,16 @@ function App() {
 
   return (
     <>
-      <NavBar totalItems={totalItems}/>
+      <NavBar totalItems={totalItems} />
       {/* Need to use "context" to pass props */}
-      <Outlet context={{ shoppingData, addItem }} />
+      <Outlet
+        context={{
+          shoppingData,
+          addItem,
+          totalItems,
+          basket,
+        }}
+      />
     </>
   );
 }

@@ -1,0 +1,33 @@
+.itemCard {
+  border: 3px solid black;
+  margin: 1rem;
+}
+
+.details {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.details img {
+  width: 100px;
+}
+
+.quantity {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.quantity input {
+  width: 40px;
+}
+
+.quantity button {
+  background-color: red;
+  padding: 0.2rem 0.5rem;
+  font-size: x-small;
+}
