@@ -8,13 +8,13 @@ function NavBar() {
         <h2 className={styles.logo}>Stoned Penguin</h2>
         <div className={styles.container}>
           {/* Note must use /home for it to be an absolute path as just "home" would be a relative one */}
-          <Link className={styles.button} to="/">
+          <Link className={styles.button} to="home">
             Home
           </Link>
-          <Link className={styles.button} to="/shop">
+          <Link className={styles.button} to="shop">
             Shop
           </Link>
-          <Link className={styles.button} to="/about">
+          <Link className={styles.button} to="about">
             About us
           </Link>
         </div>

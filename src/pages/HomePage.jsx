@@ -5,9 +5,11 @@ function HomePage() {
   return (
     <>
       <div className="container">
-        <NavBar />
-        <h2>HOME</h2>
-        <div className={styles.banner}></div>
+        <div className={styles.banner}>
+          <div className={styles.bannerMessage}>
+            <h3>Ditch convention. Embrace individuality</h3>
+          </div>
+        </div>
       </div>
     </>
   );
