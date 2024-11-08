@@ -22,7 +22,11 @@
   margin-bottom: 1rem;
 }
 
-.shoppingItem h3{
+.shoppingItem h3 {
   height: 100px;
+  margin-bottom: 10px;
+}
+
+.shoppingItem h4{
   margin-bottom: 10px;
 }
