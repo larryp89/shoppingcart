@@ -9,7 +9,7 @@
   background-image: url(../assets/stoned-penguin.png);
   background-size: cover;
   background-position: center;
-  height: 300px;
+  height: 500px;
   width: 100%;
   opacity: 0.8;
   display: flex;
@@ -30,6 +30,7 @@
   background-color: rgba(0, 0, 0, 0.5); /* Dark background with opacity */
   padding: 20px;
   border-radius: 8px;
+  width: 100%;
 }
 
 .bannerMessage h1 {
@@ -56,4 +57,16 @@
 
 .shopNowButton:hover {
   background-color: #ff4f3b;
+}
+
+@media (min-width: 501px) {
+  .banner {
+    height: 700px;
+  }
+}
+
+@media (min-width: 801px) {
+  .banner {
+    height: 800px;
+  }
 }

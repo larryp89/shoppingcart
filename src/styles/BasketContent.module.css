@@ -20,6 +20,12 @@
   font-weight: bold;
 }
 
+.buyDiv {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
 .checkoutButton {
   padding: 0.5rem 0.5rem;
   color: white;

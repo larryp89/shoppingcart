@@ -1,31 +1,45 @@
 .nav {
   width: 100%;
   background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .logo {
   font-size: 2rem;
   text-align: center;
   color: white;
-  padding: 1rem;
 }
 .container {
   display: flex;
   justify-content: space-around;
   width: 100%;
   align-items: center;
-  padding: 1rem;
 }
 
 .button {
-  padding: 0.5rem 0.5rem;
+  padding: 0.25rem 0.5rem;
   color: white;
   opacity: 0.8;
-  font-size: 1rem;
+  font-size: 1.2rem;
   border: 2px solid white;
 }
 
 .button:hover {
   cursor: pointer;
   opacity: 1;
+}
+
+@media (min-width: 800px) {
+  .nav{
+    padding: 2rem;
+  }
+  .navDetails {
+    display: flex;
+  }
+
+  h2 {
+    min-width: fit-content;
+  }
 }

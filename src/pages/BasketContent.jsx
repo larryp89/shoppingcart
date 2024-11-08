@@ -27,12 +27,14 @@ function BasketContent() {
               />
             ))}
           </ul>
-          <div className={styles.totalPrice}>
-            Basket Total: <span>£{totalPrice}</span>
+          <div className={styles.buyDiv}>
+            <button className={styles.checkoutButton} onClick={confirmPurchase}>
+              Purchase!
+            </button>
+            <div className={styles.totalPrice}>
+              Basket Total: <span>£{totalPrice}</span>
+            </div>
           </div>
-          <button className={styles.checkoutButton} onClick={confirmPurchase}>
-            Purchase!
-          </button>
         </>
       )}
     </div>
