@@ -9,8 +9,8 @@ function BasketContent() {
     totalPrice,
     deleteItem,
     confirmPurchase,
-    closePurchaseModal,
   } = useOutletContext();
+
   return (
     <div className={styles.container}>
       {basket.length === 0 ? (
@@ -30,11 +30,7 @@ function BasketContent() {
           <div className={styles.totalPrice}>
             Basket Total: <span>£{totalPrice}</span>
           </div>
-          <button
-            className={styles.checkoutButton}
-            onClick={confirmPurchase}
-            on
-          >
+          <button className={styles.checkoutButton} onClick={confirmPurchase}>
             Purchase!
           </button>
         </>

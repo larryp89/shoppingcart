@@ -1,9 +1,10 @@
 import "./styles/App.css";
 import NavBar from "./components/NavBar";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import getShoppingData from "./api";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PurchaseModal from "./pages/PurchaseModal";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   const [totalItems, setTotalItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(null);
   const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const addItem = (item) => {
     // Check if the item is already in the basket
@@ -50,6 +52,12 @@ function App() {
 
   const closePurchaseModal = () => {
     setIsPurchaseModalOpen(false);
+  };
+
+  const resetBasket = () => {
+    closePurchaseModal();
+    setBasket([]);
+    navigate("/home");
   };
 
   // Load API data
@@ -105,7 +113,10 @@ function App() {
           confirmPurchase,
         }}
       />
-      <PurchaseModal isPurchaseModalOpen={isPurchaseModalOpen} />
+      <PurchaseModal
+        isPurchaseModalOpen={isPurchaseModalOpen}
+        resetBasket={resetBasket}
+      />
     </>
   );
 }
