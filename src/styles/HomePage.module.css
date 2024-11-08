@@ -9,7 +9,7 @@
   background-image: url(../assets/stoned-penguin.png);
   background-size: cover;
   background-position: center;
-  height: 500px;
+  height: 100vh;
   width: 100%;
   opacity: 0.8;
   display: flex;
