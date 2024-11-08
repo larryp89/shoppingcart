@@ -4,12 +4,14 @@ import { Outlet } from "react-router-dom";
 import getShoppingData from "./api";
 import { useEffect } from "react";
 import { useState } from "react";
+import PurchaseModal from "./pages/PurchaseModal";
 
 function App() {
   const [shoppingData, setShoppingData] = useState([]); // Set to blank array as map will throw error if no array to iterate over
   const [basket, setBasket] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
   const [totalPrice, setTotalPrice] = useState(null);
+  const [isPurchaseModalOpen, setIsPurchaseModalOpen] = useState(false);
 
   const addItem = (item) => {
     // Check if the item is already in the basket
@@ -40,6 +42,14 @@ function App() {
     setBasket((currBasket) =>
       currBasket.filter((basketItem) => basketItem.id !== item.id)
     );
+  };
+
+  const confirmPurchase = () => {
+    setIsPurchaseModalOpen(true);
+  };
+
+  const closePurchaseModal = () => {
+    setIsPurchaseModalOpen(false);
   };
 
   // Load API data
@@ -92,8 +102,10 @@ function App() {
           handleQuantityChange,
           totalPrice,
           deleteItem,
+          confirmPurchase,
         }}
       />
+      <PurchaseModal isPurchaseModalOpen={isPurchaseModalOpen} />
     </>
   );
 }

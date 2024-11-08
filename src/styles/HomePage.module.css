@@ -1,10 +1,12 @@
+.container {
+}
 .banner {
   background-image: url(../assets/stoned-penguin.png);
   background-size: cover;
   background-position: center center;
   height: 300px;
   width: 100%;
-  opacity: 0.8;
+  opacity: 0.5;
   display: flex;
   flex-direction: column;
   justify-content: center;

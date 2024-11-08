@@ -3,8 +3,14 @@ import BasketItem from "../components/BasketItem";
 import styles from "../styles/BasketContent.module.css";
 
 function BasketContent() {
-  const { basket, handleQuantityChange, totalPrice, deleteItem } =
-    useOutletContext();
+  const {
+    basket,
+    handleQuantityChange,
+    totalPrice,
+    deleteItem,
+    confirmPurchase,
+    closePurchaseModal,
+  } = useOutletContext();
   return (
     <div className={styles.container}>
       {basket.length === 0 ? (
@@ -24,7 +30,13 @@ function BasketContent() {
           <div className={styles.totalPrice}>
             Basket Total: <span>£{totalPrice}</span>
           </div>
-          <button className={styles.checkoutButton}>Proceed to Checkout</button>
+          <button
+            className={styles.checkoutButton}
+            onClick={confirmPurchase}
+            on
+          >
+            Purchase!
+          </button>
         </>
       )}
     </div>
