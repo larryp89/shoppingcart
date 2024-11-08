@@ -7,7 +7,7 @@ function HomePage() {
       <div className={styles.banner}>
         <div className={styles.bannerMessage}>
           <h1>Welcome to Stoned Penguin!</h1>
-          <p>Your one-stop shop for quirky, fun, and unique items.</p>
+          <p>Fashion for Hipster Penguins.</p>
           <Link to="/shop">
             <button className={styles.shopNowButton}>Shop Now</button>
           </Link>
