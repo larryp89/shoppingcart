@@ -3,20 +3,30 @@ import BasketItem from "../components/BasketItem";
 import styles from "../styles/BasketContent.module.css";
 
 function BasketContent() {
-  const { basket } = useOutletContext();
-  console.log(basket);
+  const { basket, handleQuantityChange, totalPrice, deleteItem } =
+    useOutletContext();
   return (
     <div className={styles.container}>
       {basket.length === 0 ? (
         <h1>Nothing to see here!</h1>
       ) : (
-        <ul>
-          {basket.map((item) => {
-            return <BasketItem key={item.id} item={item} />;
-          })}
-        </ul>
+        <>
+          <ul>
+            {basket.map((item) => (
+              <BasketItem
+                key={item.id}
+                item={item}
+                handleQuantityChange={handleQuantityChange}
+                deleteItem={deleteItem}
+              />
+            ))}
+          </ul>
+          <div className={styles.totalPrice}>
+            Basket Total: <span>£{totalPrice}</span>
+          </div>
+          <button className={styles.checkoutButton}>Proceed to Checkout</button>
+        </>
       )}
-      <button>Proceed to Checkout</button>
     </div>
   );
 }

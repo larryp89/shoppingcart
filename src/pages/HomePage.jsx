@@ -4,11 +4,8 @@ function HomePage() {
   return (
     <>
       <div className="container">
-        <div className={styles.banner}>
-          <div className={styles.bannerMessage}>
-            <h3>Ditch convention. Embrace individuality</h3>
-          </div>
-        </div>
+        <h3>Ditch convention. Embrace Individuality</h3>
+        <div className={styles.banner}></div>
       </div>
     </>
   );

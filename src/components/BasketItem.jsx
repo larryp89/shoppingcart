@@ -1,6 +1,6 @@
 import styles from "../styles/BasketItem.module.css";
 
-function BasketItem({ item }) {
+function BasketItem({ item, handleQuantityChange, deleteItem }) {
   return (
     <div className={styles.itemCard}>
       <div className={styles.details}>
@@ -14,9 +14,10 @@ function BasketItem({ item }) {
               type="number"
               value={item.quantity}
               min="1"
-              onChange={() => console.log(item)}
+              id={item.id}
+              onChange={handleQuantityChange}
             />
-            <button>X</button>
+            <button onClick={() => deleteItem(item)}>X</button>
           </div>
         </div>
       </div>

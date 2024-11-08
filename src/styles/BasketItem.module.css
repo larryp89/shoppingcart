@@ -1,6 +1,6 @@
 .itemCard {
   border: 3px solid black;
-  margin: 1rem;
+  margin-bottom: 1rem;
 }
 
 .details {
@@ -18,7 +18,6 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  border: 2px solid black;
   padding: 1rem;
 }
 

@@ -9,6 +9,7 @@ function App() {
   const [shoppingData, setShoppingData] = useState([]); // Set to blank array as map will throw error if no array to iterate over
   const [basket, setBasket] = useState([]);
   const [totalItems, setTotalItems] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(null);
 
   const addItem = (item) => {
     // Check if the item is already in the basket
@@ -35,6 +36,13 @@ function App() {
     }
   };
 
+  const deleteItem = (item) => {
+    setBasket((currBasket) =>
+      currBasket.filter((basketItem) => basketItem.id !== item.id)
+    );
+  };
+
+  // Load API data
   useEffect(() => {
     const loadShoppingData = async () => {
       const data = await getShoppingData();
@@ -48,6 +56,29 @@ function App() {
     setTotalItems(basket.length);
   }, [basket]);
 
+  const handleQuantityChange = (event) => {
+    const inputValue = parseInt(event.target.value) || 1; // Default to 1 if input is invalid
+    const inputID = parseInt(event.target.id);
+
+    // Update the state based on the input
+    setBasket((currBasket) =>
+      currBasket.map((basketItem) =>
+        basketItem.id === inputID
+          ? { ...basketItem, quantity: inputValue }
+          : basketItem
+      )
+    );
+  };
+
+  useEffect(() => {
+    let totalAmount = 0;
+    basket.forEach(
+      (item) =>
+        (totalAmount += parseFloat(item.quantity) * parseFloat(item.price))
+    );
+    setTotalPrice(totalAmount.toFixed(2));
+  }, [basket]);
+
   return (
     <>
       <NavBar totalItems={totalItems} />
@@ -58,6 +89,9 @@ function App() {
           addItem,
           totalItems,
           basket,
+          handleQuantityChange,
+          totalPrice,
+          deleteItem,
         }}
       />
     </>
